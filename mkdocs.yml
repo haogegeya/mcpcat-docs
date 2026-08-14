@@ -1,0 +1,123 @@
+# mkdocs 配置
+site_name: MCPCat 文档
+site_description: MCP 能力聚合网关官方文档 - 一个 MCP 端点，几百个 AI 工具立刻能用
+site_url: https://docs.mcpcat.cn/
+repo_url: https://github.com/haogegeya/mcpcat-docs
+repo_name: haogegeya/mcpcat-docs
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到暗黑模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: 切换到明亮模式
+  font:
+    text: Noto Sans SC
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+extra_css:
+  - assets/css/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/haogegeya
+    - icon: fontawesome/solid/globe
+      link: https://mcpcat.cn
+  generator: false
+  copyright: Copyright © 2026 MCPCat
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - meta
+  - sane_lists
+
+plugins:
+  - search:
+      lang: zh
+  - minify:
+      minify_html: true
+
+nav:
+  - 首页: README.md
+  - 快速开始:
+      - 快速开始: getting-started/quickstart.md
+      - 认证说明: getting-started/authentication.md
+      - 核心概念: getting-started/concepts.md
+  - 客户端接入:
+      - 总览: guides/README.md
+      - Claude Desktop: guides/claude-desktop.md
+      - Cursor: guides/cursor.md
+      - Cline: guides/cline.md
+      - OpenClaw: guides/openclaw.md
+      - 其他客户端: guides/other-clients.md
+  - API 参考:
+      - 总览: api/README.md
+      - 认证: api/authentication.md
+      - initialize: api/initialize.md
+      - tools/list: api/tools-list.md
+      - tools/call: api/tools-call.md
+      - 错误码: api/error-codes.md
+      - 计费规则: api/billing.md
+  - 工具列表:
+      - 总览: tools/README.md
+      - 生活服务: tools/lifestyle.md
+      - 物流快递: tools/express.md
+      - 通信查询: tools/communication.md
+      - 网络工具: tools/network.md
+      - 金融行情: tools/finance.md
+      - 验证核验: tools/verification.md
+      - 出行查询: tools/travel.md
+  - 更多:
+      - 定价说明: pricing.md
+      - 使用示例: examples.md
+      - 常见问题: faq.md
+      - 路线图: roadmap.md

@@ -1,0 +1,79 @@
+/* MCPCat 自定义样式 */
+
+:root {
+  --md-primary-fg-color: #FF6B35;
+  --md-primary-fg-color--light: #FF8C5E;
+  --md-primary-fg-color--dark: #E55A2B;
+  --md-accent-fg-color: #4ECDC4;
+  --md-accent-fg-color--transparent: rgba(78, 205, 196, 0.1);
+  --md-typeset-a-color: #FF6B35;
+}
+
+/* 暗色模式配色 */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #FF6B35;
+  --md-primary-fg-color--light: #FF8C5E;
+  --md-primary-fg-color--dark: #E55A2B;
+  --md-accent-fg-color: #4ECDC4;
+  --md-typeset-a-color: #FF8C5E;
+  --md-default-bg-color: #1A1A2E;
+  --md-default-bg-color--light: rgba(255, 255, 255, 0.05);
+}
+
+/* 代码块样式 */
+.md-typeset code {
+  border-radius: 4px;
+  padding: 0.1em 0.3em;
+  font-size: 0.9em;
+}
+
+.md-typeset pre > code {
+  border-radius: 8px;
+}
+
+/* 表格美化 */
+.md-typeset table:not([class]) {
+  font-size: 0.85em;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+  color: white;
+  font-weight: 600;
+}
+
+/* 强调块 */
+.md-typeset .admonition {
+  border-radius: 8px;
+}
+
+/* 链接 */
+.md-typeset a {
+  transition: color 0.2s ease;
+}
+
+.md-typeset a:hover {
+  color: #E55A2B;
+}
+
+/* 标题 */
+.md-typeset h1 {
+  color: #1A1A2E;
+  font-weight: 700;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: #FF8C5E;
+}
+
+/* 导航选中 */
+.md-tabs__link--active {
+  color: #FF6B35 !important;
+}
+
+/* 页脚 */
+.md-footer {
+  background-color: #1A1A2E;
+}
