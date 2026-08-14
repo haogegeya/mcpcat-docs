@@ -1,0 +1,32 @@
+User-agent: *
+# 全部允许（除控制台后台）
+Allow: /
+Disallow: /console
+Disallow: /admin
+Disallow: /api
+Disallow: /login
+
+# Sitemap 位置
+Sitemap: https://www.mcpcat.cn/sitemap.xml
+
+# 补充：声明主要搜索引擎爬虫
+User-agent: Baiduspider
+Allow: /
+Disallow: /console
+Disallow: /admin
+Disallow: /api
+Disallow: /login
+
+User-agent: Googlebot
+Allow: /
+Disallow: /console
+Disallow: /admin
+Disallow: /api
+Disallow: /login
+
+User-agent: Bingbot
+Allow: /
+Disallow: /console
+Disallow: /admin
+Disallow: /api
+Disallow: /login
