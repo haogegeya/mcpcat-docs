@@ -1,30 +1,31 @@
 #!/bin/bash
 # 本地预览文档
+#
+# 与 build.sh 用同一个 conda 环境和同一份 requirements.txt，
+# 保证「本地看到的」和「CI 构建出来的」是同一套依赖。
 set -e
 
-echo "🚀 启动 MCPCat 文档本地预览..."
+cd "$(dirname "$0")/.."
 
-# 检查 Python
-if ! command -v python3 &> /dev/null; then
-    echo "❌ Python3 未安装"
+CONDA_BIN="${CONDA_BIN:-$HOME/miniconda3/bin/conda}"
+ENV_NAME="${MCPCAT_DOCS_ENV:-mcpcat-docs}"
+
+if [ -x "$CONDA_BIN" ] && "$CONDA_BIN" env list | grep -qE "^$ENV_NAME([[:space:]]|$)"; then
+    PY="$("$CONDA_BIN" run -n "$ENV_NAME" which python)"
+    echo "🐍 使用 conda 环境: $ENV_NAME"
+else
+    PY="${PYTHON:-python3}"
+    echo "🐍 未找到 conda 环境 $ENV_NAME，回退到 $PY"
+fi
+
+if ! "$PY" -c "import mkdocs" 2>/dev/null; then
+    echo "❌ 当前 Python 没装 mkdocs。先建环境并装依赖："
+    echo "   conda create -y -n $ENV_NAME python=3.11"
+    echo "   conda run -n $ENV_NAME pip install -r requirements.txt"
     exit 1
 fi
 
-# 创建虚拟环境（如果不存在）
-if [ ! -d ".venv" ]; then
-    echo "📦 创建虚拟环境..."
-    python3 -m venv .venv
-fi
-
-# 激活虚拟环境
-source .venv/bin/activate
-
-# 安装依赖
-echo "📥 安装依赖..."
-pip install -q mkdocs mkdocs-material pymdown-extensions
-
-# 启动预览
 echo "✅ 启动预览服务..."
 echo "🌐 浏览器打开: http://localhost:8000"
 echo "⏹️  按 Ctrl+C 停止"
-mkdocs serve
+"$PY" -m mkdocs serve
