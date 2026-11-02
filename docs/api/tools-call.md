@@ -7,6 +7,7 @@
 `tools/call` 是 MCPCat 最核心的方法，AI Agent 通过它执行具体的工具调用。
 
 **核心特性**：
+
 - 参数严格校验（按 `inputSchema`）
 - 预扣 MCoin → 执行 → 成功/失败退款
 - 返回统一格式的 MCP 标准结果
@@ -18,7 +19,7 @@
 
 ### 方法名
 
-```
+```text
 tools/call
 ```
 
@@ -118,7 +119,7 @@ curl -X POST https://mcp.mcpcat.cn/v1/mcp \
 
 ### 预扣 + 失败回滚
 
-```
+```text
 1. 查工具定价 sell_mcoin
 2. 检查余额 >= sell_mcoin
 3. 事务：预扣 MCoin
@@ -152,11 +153,13 @@ curl -X POST https://mcp.mcpcat.cn/v1/mcp \
 MCPCat 会检测"上游返回 200 但实际没数据"的情况，避免扣费：
 
 **检测规则**：
+
 - 响应解析后所有关键字段为 null/空
 - 格式化文本为空或仅包含 "null"、"None"
 - 响应数组长度为 0
 
 **示例**：乱码城市名查天气
+
 - 上游返回 200，但 data 字段全空
 - MCPCat 检测到空结果
 - 设置 `isError=true`，自动退款

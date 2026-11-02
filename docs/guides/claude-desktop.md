@@ -152,7 +152,7 @@ Windows：设置 → 开发者 → 日志
 
 ### ❌ 配置后没看到 mcpcat 服务器？
 
-- 确认 JSON 格式正确（用 https://jsonlint.com 校验）
+- 确认 JSON 格式正确（用 <https://jsonlint.com> 校验）
 - 确认 API Key 格式正确（`mcpc_sk_` 前缀，32 位字符）
 - 完全退出 Claude Desktop 后重新启动
 - 查看日志找错误：macOS `~/Library/Logs/Claude/`
@@ -160,9 +160,11 @@ Windows：设置 → 开发者 → 日志
 ### ❌ Claude 提示"无法连接到 mcpcat"？
 
 - 检查网络能否访问 `mcp.mcpcat.cn`：
+
   ```bash
   curl -I https://mcp.mcpcat.cn
   ```
+
 - 确认 URL 拼写正确：`https://mcp.mcpcat.cn/v1/mcp`（带 `/v1/mcp`）
 - 临时关闭代理 / VPN 试试
 - 检查系统代理设置
@@ -178,7 +180,7 @@ Windows：设置 → 开发者 → 日志
 - 查看 [错误码文档](../api/error-codes.md)
 - 检查 API Key 余额：登录控制台 → 钱包
 - 确认参数名正确（参考 [工具列表](../tools/README.md)）
-- 联系 support@mcpcat.cn
+- 联系 [support@mcpcat.cn](mailto:support@mcpcat.cn)
 
 ### ❌ Claude 没有主动调用工具？
 

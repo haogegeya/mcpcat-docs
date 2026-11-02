@@ -4,7 +4,7 @@
 
 MCPCat 网关实现 **MCP JSON-RPC 2.0 协议**，通过单一 HTTP 端点暴露：
 
-```
+```http
 POST https://mcp.mcpcat.cn/v1/mcp
 ```
 
@@ -29,7 +29,7 @@ POST https://mcp.mcpcat.cn/v1/mcp
 
 ### Base URL
 
-```
+```text
 https://mcp.mcpcat.cn/v1/mcp
 ```
 
@@ -44,7 +44,7 @@ https://mcp.mcpcat.cn/v1/mcp
 
 所有请求必须在 HTTP Header 中携带 Bearer Token：
 
-```
+```http
 Authorization: Bearer mcpc_sk_xxxxx
 ```
 
@@ -255,7 +255,7 @@ Authorization: Bearer mcpc_sk_xxxxx
 
 工具调用采用**预扣 + 失败回滚**机制：
 
-```
+```text
 1. 查工具定价（sell_mcoin）
 2. 余额检查
 3. 事务：预扣 MCoin

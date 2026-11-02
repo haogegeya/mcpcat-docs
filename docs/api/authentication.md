@@ -14,12 +14,13 @@ MCPCat 网关 API **仅支持 API Key 鉴权**（不支持 JWT，JWT 仅用于�
 
 ### 格式
 
-```
+```text
 mcpc_sk_<32位随机字符>
 ```
 
 示例：
-```
+
+```text
 mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 ```
 
@@ -144,6 +145,7 @@ API Key 无效或缺失：
 ```
 
 **原因**：
+
 - 缺失 `Authorization` Header
 - API Key 拼写错误
 - API Key 已被撤销
@@ -165,6 +167,7 @@ IP 不在白名单：
 ```
 
 **原因**：
+
 - 调用 IP 不在 API Key 配置的 `allowed_ips` 中
 
 ### 429 Too Many Requests
@@ -186,6 +189,7 @@ IP 不在白名单：
 ```
 
 **处理**：
+
 - 等待 `retry_after` 秒后重试
 - 或升级 API Key 速率限制（在控制台修改）
 
@@ -205,7 +209,8 @@ API Key 被风控冻结：
 ```
 
 **处理**：
-- 联系 support@mcpcat.cn 申请解封
+
+- 联系 [support@mcpcat.cn](mailto:support@mcpcat.cn) 申请解封
 - 或创建新的 API Key
 
 ---
@@ -331,11 +336,12 @@ curl -X POST https://mcp.mcpcat.cn/v1/mcp \
 2. 创建新 Key
 3. 更新所有使用该 Key 的客户端配置
 4. 检查账单，确认没有异常调用
-5. 如有资损，联系 support@mcpcat.cn
+5. 如有资损，联系 [support@mcpcat.cn](mailto:support@mcpcat.cn)
 
 ### Q: 怎么查看 API Key 的用量？
 
 登录控制台 → API Key 管理 → 每个 Key 旁边有「用量统计」按钮，显示：
+
 - 总调用次数
 - 成功/失败次数
 - 最后调用时间
@@ -344,6 +350,7 @@ curl -X POST https://mcp.mcpcat.cn/v1/mcp \
 ### Q: 多个客户端可以共用一个 Key 吗？
 
 技术上可以，但**不推荐**：
+
 - ❌ 无法独立撤销
 - ❌ 无法独立统计
 - ❌ 无法独立限流
@@ -352,6 +359,7 @@ curl -X POST https://mcp.mcpcat.cn/v1/mcp \
 ### Q: API Key 会被自动撤销吗？
 
 正常情况下不会，仅在以下情况撤销：
+
 - 用户手动删除
 - 风控系统检测到异常
 - 账号被封禁

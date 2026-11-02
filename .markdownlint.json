@@ -1,0 +1,34 @@
+{
+  "line-length": false,
+  "table-column-style": false,
+  "code-block-style": false,
+  "heading-style": false,
+  "first-line-heading": false,
+  "no-emphasis-as-heading": false,
+  "no-duplicate-heading": {
+    "siblings_only": true
+  },
+  "ol-prefix": {
+    "style": "one_or_ordered"
+  },
+  "ul-indent": {
+    "indent": 2
+  },
+  "fenced-code-language": {
+    "allowed_languages": [
+      "bash",
+      "http",
+      "html",
+      "javascript",
+      "json",
+      "jsonc",
+      "markdown",
+      "mermaid",
+      "python",
+      "text",
+      "typescript",
+      "yaml"
+    ],
+    "language_only": true
+  }
+}

@@ -1,9 +1,11 @@
 # V2EX 版本（带 mcpcat.cn 外链版）
 
 ## 标题
+
 **做了个 MCP 聚合网关 MCPCat，一个端点搞定 135+ AI 工具（送 100 MCoin）**
 
 ## 节点
+
 创造者 / 程序员 / 分享创造
 
 ---
@@ -43,7 +45,7 @@ MCP 出来一年了，我也用了一年。
 }
 ```
 
-去 https://www.mcpcat.cn 注册送 100 MCoin，够玩一周。
+去 <https://www.mcpcat.cn> 注册送 100 MCoin，够玩一周。
 
 ## 技术栈
 
@@ -55,8 +57,8 @@ MCP 出来一年了，我也用了一年。
 
 ## 文档
 
-GitHub: https://github.com/haogegeya/mcpcat-docs
-官网: https://www.mcpcat.cn
+GitHub: <https://github.com/haogegeya/mcpcat-docs>
+官网: <https://www.mcpcat.cn>
 
 ## 路线图
 
@@ -74,7 +76,7 @@ GitHub: https://github.com/haogegeya/mcpcat-docs
 
 ---
 
-**update**: 刚推了 GitHub 文档站，star 一下：https://github.com/haogegeya/mcpcat-docs
+**update**: 刚推了 GitHub 文档站，star 一下：<https://github.com/haogegeya/mcpcat-docs>
 
 ---
 

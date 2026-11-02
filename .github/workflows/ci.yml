@@ -1,3 +1,11 @@
+# CI：Markdown 规范 + 链接检查 + 站点构建
+#
+# 三个 job 在 2026-08-14 全红，原因各不同：
+#   - Lint   ：没给 markdownlint 配置，默认规则集对中文文档产生 1195 条噪音（表格竖线风格 674 条）
+#   - Links  ：正文里裸邮箱被 lychee 当相对路径；`cargo install lychee` 又慢又脆
+#   - Build  ：mkdocs.yml 声明了 minify 插件但依赖没装
+# 现在依赖统一到 requirements.txt，构建口径与本地一致（--strict）。
+
 name: CI
 
 on:
@@ -11,35 +19,33 @@ jobs:
     name: Lint Markdown
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install markdownlint
         run: npm install -g markdownlint-cli
 
       - name: Lint
-        run: markdownlint '**/*.md' --ignore node_modules --ignore .github
+        run: markdownlint '**/*.md' --ignore node_modules --ignore site
 
   check-links:
     name: Check Links
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
+      # 预编译二进制代替 cargo install（编译要 5-10 分钟）
       - name: Install lychee
         run: |
-          cargo install lychee
-          # 或下载预编译版本
-          # curl -fsSL https://github.com/lycheeverse/lychee/releases/download/v0.15.0/lychee-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          VER=0.24.2
+          curl -fsSL -o lychee.tar.gz \
+            "https://github.com/lycheeverse/lychee/releases/download/lychee-v${VER}/lychee-x86_64-unknown-linux-gnu.tar.gz"
+          tar xzf lychee.tar.gz
+          echo "$PWD/lychee-x86_64-unknown-linux-gnu" >> "$GITHUB_PATH"
 
       - name: Check internal links
         run: lychee --offline 'docs/**/*.md' README.md
@@ -48,16 +54,18 @@ jobs:
     name: Build Site
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
+          cache: 'pip'
 
-      - name: Install mkdocs
+      - name: Install dependencies
         run: |
-          pip install mkdocs mkdocs-material
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Build
         run: mkdocs build --strict

@@ -54,11 +54,11 @@
 
 > ⚠️ 把 `mcpc_sk_xxxxx` 替换为你的真实 API Key。
 
-4. **保存文件**
+1. **保存文件**
 
-5. **重启 Claude Desktop**
+2. **重启 Claude Desktop**
 
-6. **验证配置**：
+3. **验证配置**：
    - 在 Claude Desktop 中，点击左下角"设置"图标
    - 进入"开发者"或"扩展"页面
    - 应该能看到 "mcpcat" 服务器
@@ -74,17 +74,20 @@ Claude 会自动调用 `weather_query` 工具，返回结果。
 ### 🆘 常见问题
 
 **Q: 配置后没看到 mcpcat 服务器？**
+
 - 确认 JSON 格式正确（用 JSON 校验工具）
 - 确认 API Key 格式正确（`mcpc_sk_` 前缀）
 - 重启 Claude Desktop
 - 查看日志：macOS `~/Library/Logs/Claude/`
 
 **Q: Claude 提示"无法连接到 mcpcat"？**
+
 - 检查网络能否访问 `mcp.mcpcat.cn`
 - 确认 URL 拼写正确（注意是 `/v1/mcp` 不是 `/mcp`）
 - 临时关闭代理/VPN 试试
 
 **Q: 工具调用失败？**
+
 - 登录 MCPCat 控制台查看错误日志
 - 检查 API Key 余额
 - 确认已勾选对应工具
@@ -114,9 +117,11 @@ Claude 会自动调用 `weather_query` 工具，返回结果。
    - **Type**：`http`
    - **URL**：`https://mcp.mcpcat.cn/v1/mcp`
    - **Headers**：
-     ```
+
+     ```http
      Authorization: Bearer mcpc_sk_xxxxx
      ```
+
 6. 点击「**Save**」
 
 #### 方式 2：手动配置
@@ -147,10 +152,12 @@ Composer 会自动识别可用的 MCP 工具并调用。
 ### 🆘 常见问题
 
 **Q: 配置后没看到工具？**
+
 - 在 Composer 中点击工具图标，确认 mcpcat 已启用
 - 重新加载窗口（`Cmd+Shift+P` → "Reload Window"）
 
 **Q: Type 字段填什么？**
+
 - 填 `http`（Streamable HTTP 传输）
 - 不要填 `sse` 或 `stdio`（MCPCat 不支持这两种）
 
@@ -191,12 +198,13 @@ Composer 会自动识别可用的 MCP 工具并调用。
 }
 ```
 
-6. 保存文件
-7. Cline 会自动加载新配置
+1. 保存文件
+2. Cline 会自动加载新配置
 
 #### 方式 2：直接编辑配置文件
 
 配置文件位置：
+
 - **macOS/Linux**：`~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`
 - **Windows**：`%APPDATA%\Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json`
 
@@ -211,11 +219,13 @@ Cline 会自动调用 MCPCat 工具，查询并展示。
 ### 🆘 常见问题
 
 **Q: 看到 "Server disconnected" 错误？**
+
 - 检查网络连接
 - 确认 API Key 有效
 - 查看 Cline 输出日志
 
 **Q: 工具列表为空？**
+
 - 在 Cline 设置中确认 mcpcat 已启用
 - 登录 MCPCat 控制台确认工具已勾选
 
@@ -363,6 +373,7 @@ npx -y @modelcontextprotocol/inspector@latest
 ```
 
 默认端口：
+
 - Client UI: `http://localhost:6274`
 - Server: `http://localhost:6277`
 
@@ -397,7 +408,8 @@ npx -y @modelcontextprotocol/inspector@latest
 ### 1. 配置不生效
 
 **检查清单**：
-- [ ] JSON 格式正确（用 https://jsonlint.com 校验）
+
+- [ ] JSON 格式正确（用 <https://jsonlint.com> 校验）
 - [ ] API Key 完整且正确（`mcpc_sk_` 前缀）
 - [ ] URL 正确：`https://mcp.mcpcat.cn/v1/mcp`（带 `/v1/mcp`）
 - [ ] 已重启客户端
@@ -421,6 +433,7 @@ curl -X POST https://mcp.mcpcat.cn/v1/mcp \
 ### 3. 工具调用失败
 
 **常见原因**：
+
 - 工具未在控制台勾选 → 去 [工具市场](https://mcpcat.cn/console/tools) 勾选
 - API Key 余额不足 → 去 [充值](https://mcpcat.cn/console/billing) 页面
 - 参数错误 → 参考 [工具文档](../tools/README.md)
@@ -428,8 +441,8 @@ curl -X POST https://mcp.mcpcat.cn/v1/mcp \
 ### 4. 获取更多帮助
 
 - 📖 [API 错误码](../api/error-codes.md)
-- 💬 [MCPCat 用户群](#)
-- 📧 邮件：support@mcpcat.cn
+- 💬 **MCPCat 用户群**（内测期由官方通过邮件邀请开通）
+- 📧 邮件：[support@mcpcat.cn](mailto:support@mcpcat.cn)
 - 🐛 [GitHub Issues](https://github.com/haogegeya/mcpcat-docs/issues)
 
 ---

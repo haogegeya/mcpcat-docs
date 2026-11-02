@@ -52,7 +52,7 @@ vercel --prod
 
 ## 📁 目录结构
 
-```
+```text
 mcpcat-docs/
 ├── README.md              # 项目说明
 ├── LICENSE

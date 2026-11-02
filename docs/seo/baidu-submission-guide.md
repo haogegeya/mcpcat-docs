@@ -2,19 +2,22 @@
 
 ## 方式 A：HTML 标签验证（推荐，5 分钟搞定）
 
-1. 登录 https://ziyuan.baidu.com
+1. 登录 <https://ziyuan.baidu.com>
 2. 站点管理 → 添加站点 → `https://www.mcpcat.cn`
 3. 选「HTML 标签验证」
 4. 百度会给你一段 meta 标签，类似：
+
    ```html
    <meta name="baidu-site-verification" content="xxxxxxxxxxxx" />
    ```
+
 5. 把这段 meta 标签粘到你**首页 `<head>`** 里的任意位置
 6. 点百度后台的「完成验证」按钮
 
 ### 验证位置
 
 放这都行：
+
 - Next.js 的 `app/layout.tsx` 里 `<head>` 块
 - 或者直接放 `<head>` 顶层
 
@@ -41,18 +44,22 @@
 ## 验证通过后，必须做的 3 件事
 
 ### 1. 提交 sitemap
+
 - 资源提交 → sitemap → 添加 `https://www.mcpcat.cn/sitemap.xml`
 
 ### 2. 第一次普通收录 API 推送
+
 - 资源提交 → 普通收录 → 推送接口
 - 复制 token 填到 `scripts/.env.baidu` 里
 - 跑 `bash scripts/baidu_push.sh`
 
 ### 3. 提交死链（重要）
+
 - 死链提交 → 添加死链文件
 - 我已经帮你扫到 4 个 404：`/blog` `/help` `/about` `/privacy`
 - 提交格式：
-  ```
+
+  ```text
   https://www.mcpcat.cn/blog
   https://www.mcpcat.cn/help
   https://www.mcpcat.cn/about
@@ -73,8 +80,8 @@
 
 ## Bing / Google 站长（顺手也注册）
 
-- **Google Search Console**：https://search.google.com/search-console/
-- **Bing Webmaster**：https://www.bing.com/webmasters
+- **Google Search Console**：<https://search.google.com/search-console/>
+- **Bing Webmaster**：<https://www.bing.com/webmasters>
 
 MCPCat 主要是国内市场，但 Bing/Google 也能给你带些流量。
 

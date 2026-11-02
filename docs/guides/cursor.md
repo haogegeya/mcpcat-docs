@@ -21,6 +21,7 @@
 #### Step 2：找到 MCP 配置
 
 导航路径：
+
 - **Settings** → **Features** → **Model Context Protocol**
 
 #### Step 3：添加新服务器
@@ -93,6 +94,7 @@ nano ~/.cursor/mcp.json
 > "用 Python 写一个脚本，调用 MCPCat 查北京天气，输出温度和天气状况"
 
 Composer 会自动：
+
 1. 识别 MCPCat 工具可用
 2. 调用 `weather_query(cityname="北京")`
 3. 编写 Python 代码整合调用
@@ -112,6 +114,7 @@ Chat 会调用 MCPCat 查询示例城市，然后给出集成代码。
 > "我需要做一个 demo：用户输入手机号，显示归属地。帮我从 0 写一个 React + Node.js 项目，用 MCPCat 实现归属地查询"
 
 Agent 会：
+
 1. 创建项目结构
 2. 编写前端表单
 3. 编写后端 API 代理（保护 Key）
@@ -202,7 +205,7 @@ Agent 会：
 
 - 确认 API Key 速率限制（默认 60 次/分钟）
 - 查看 [错误码文档](../api/error-codes.md)
-- 联系 support@mcpcat.cn
+- 联系 [support@mcpcat.cn](mailto:support@mcpcat.cn)
 
 ---
 

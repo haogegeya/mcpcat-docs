@@ -1,0 +1,7 @@
+# 文档站构建依赖 —— 必须覆盖 mkdocs.yml 里声明的每一个 plugin / extension
+# 改 mkdocs.yml 的 plugins 或 markdown_extensions 时，同步改这里。
+# 本地与 CI 用同一份清单，避免「CI 装了、本地没装」或反之。
+mkdocs==1.6.1
+mkdocs-material==9.8.0
+mkdocs-minify-plugin==0.8.0
+pymdown-extensions==12.3

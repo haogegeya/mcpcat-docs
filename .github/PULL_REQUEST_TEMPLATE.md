@@ -26,7 +26,7 @@
 
 ### ✅ Checklist
 
-- [ ] 我已阅读 [CONTRIBUTING.md](../../CONTRIBUTING.md)
+- [ ] 我已阅读 [CONTRIBUTING.md](../docs/CONTRIBUTING.md)
 - [ ] 我的改动遵循文档规范
 - [ ] 我已检查 Markdown 语法
 - [ ] 我已检查所有链接有效

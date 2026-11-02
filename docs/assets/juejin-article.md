@@ -1,12 +1,17 @@
 # 掘金版本
 
 ## 标题
+
 **10 个让 AI Agent 起飞的神级 MCP 接口（2026 上半年盘点）**
 
 ## 标签
+
+```text
 #MCP #Claude #AI #开发工具 #效率 #Anthropic #Cursor #Agent
+```
 
 ## 分类
+
 后端 > AI > 开发工具
 
 ---
@@ -38,12 +43,14 @@
 **痛点**：想给 AI 装工具就要自买 API、自写代码、自搭环境。
 
 **MCPCat 做法**：
+
 - 一个 MCP URL = 13 个工具
 - 0 代码，5 分钟接入
 - MCoin 统一计费（1 元 = 100 MCoin）
 - 失败自动退款
 
 **接入**：
+
 ```json
 {
   "mcpServers": {

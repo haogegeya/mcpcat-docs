@@ -16,13 +16,13 @@
 
 OpenClaw 的 MCP 配置文件位置：
 
-```
+```text
 ~/.openclaw/workspace/mcp.json
 ```
 
 或在工作区根目录：
 
-```
+```text
 ~/.openclaw/workspace-coder/mcp.json
 ```
 
@@ -88,6 +88,7 @@ OpenClaw 会调用 MCPCat 的 `weather_query` 工具。
 > "我有个顺丰快递 SF1234567890，帮我查一下到哪了。如果到了北京，顺便查一下北京今天的天气"
 
 OpenClaw 会：
+
 1. 调用 `express_query` 查快递
 2. 根据结果判断是否需要调用 `weather_query`
 

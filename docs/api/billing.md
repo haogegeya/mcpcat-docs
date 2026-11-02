@@ -38,7 +38,7 @@
 
 - **微信支付**（v1.0 上线后）
 - **支付宝**（v1.0 上线后）
-- **手动充值**（内测期，联系 support@mcpcat.cn）
+- **手动充值**（内测期，联系 [support@mcpcat.cn](mailto:support@mcpcat.cn)）
 
 ---
 
@@ -84,7 +84,7 @@
 
 ### 标准流程
 
-```
+```text
 用户调用工具
     ↓
 1. 查该工具定价（sell_mcoin）
@@ -156,6 +156,7 @@
 登录 [MCPCat 控制台](https://mcpcat.cn/console) → 「账单」
 
 可查询：
+
 - **实时账单**：最近 100 条
 - **时间筛选**：按日/周/月
 - **类型筛选**：消费/退款/充值/赠币
@@ -198,7 +199,7 @@ MCPCat 自动检测以下异常行为：
 
 - Key 被冻结后所有调用立即失败
 - 控制台可查看冻结原因
-- 联系 support@mcpcat.cn 申请解封
+- 联系 [support@mcpcat.cn](mailto:support@mcpcat.cn) 申请解封
 
 ---
 
@@ -234,20 +235,22 @@ MCPCat 自动检测以下异常行为：
 
 ### Q: 充值后能退吗？
 
-支持，联系 support@mcpcat.cn 申请退款，未消费的 MCoin 可退。
+支持，联系 [support@mcpcat.cn](mailto:support@mcpcat.cn) 申请退款，未消费的 MCoin 可退。
 
 ### Q: 为什么我调用失败了还扣费？
 
 可能情况：
+
 - 上游返回 200 但 data 有数据（MCPCat 视为成功）
 - 空结果检测规则未覆盖你的场景
 
-联系 support@mcpcat.cn 提供 call_id，可人工核查退款。
+联系 [support@mcpcat.cn](mailto:support@mcpcat.cn) 提供 call_id，可人工核查退款。
 
 ### Q: 怎么查看免费额度剩余？
 
 调用免费工具时响应 Header 包含：
-```
+
+```http
 X-Free-Quota-Used: 5
 X-Free-Quota-Limit: 50
 X-Free-Quota-Reset: 2026-08-15 00:00:00+08:00

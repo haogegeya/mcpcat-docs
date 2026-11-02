@@ -22,12 +22,13 @@ MCPCat 使用 **两套独立的凭证体系**：
 
 ### 格式
 
-```
+```text
 mcpc_sk_<32位随机字符>
 ```
 
 示例：
-```
+
+```text
 mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 ```
 
@@ -103,6 +104,7 @@ curl -X POST https://mcp.mcpcat.cn/v1/mcp \
 ### 安全建议
 
 ✅ **应该做的**：
+
 - 为不同环境创建不同 Key（开发/测试/生产）
 - 定期轮换 Key
 - 离职员工 / 设备淘汰时及时撤销
@@ -110,6 +112,7 @@ curl -X POST https://mcp.mcpcat.cn/v1/mcp \
 - 在 1Password / vaultwarden 等工具中安全保存
 
 ❌ **不应该做的**：
+
 - 把 Key 硬编码到公开仓库
 - 在前端代码中暴露（Key 设计上**不**用于浏览器直接调用）
 - 多个客户端共用一个 Key（无法独立撤销）
@@ -138,7 +141,7 @@ JWT 仅用于 **MCPCat 控制台（dashboard）** 的浏览器登录：
 
 ### 工作流程
 
-```
+```text
 浏览器 → POST /api/auth/login (邮箱+密码)
    ↓
 MCPCat 返回 JWT (存 localStorage)
@@ -170,7 +173,7 @@ MCPCat 使用 **滑动过期** 策略：
 
 ## 🔄 两套凭证的关系
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │                  你的账号                         │
 │                                                  │
@@ -190,6 +193,7 @@ MCPCat 使用 **滑动过期** 策略：
 ```
 
 **举例**：
+
 - 你的账号有 1 个 JWT（登录浏览器用）
 - 你可以创建多个 API Key：
   - Key 1：Claude Desktop 用
@@ -207,6 +211,7 @@ MCPCat 使用 **滑动过期** 策略：
 当前版本需要联系 [support@mcpcat.cn](mailto:support@mcpcat.cn) 人工重置。
 
 后续版本会支持：
+
 - 邮箱验证码重置
 - 手机验证码重置
 
@@ -227,7 +232,7 @@ MCPCat 使用 **滑动过期** 策略：
 1. 立即修改密码
 2. 撤销所有 API Key
 3. 检查账单，标记异常调用
-4. 联系 support@mcpcat.cn
+4. 联系 [support@mcpcat.cn](mailto:support@mcpcat.cn)
 
 ---
 

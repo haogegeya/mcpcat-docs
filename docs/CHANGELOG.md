@@ -8,6 +8,7 @@
 ## [Unreleased]
 
 ### 计划中
+
 - 工具详情页：增加 curl/python/JS 调用示例
 - API 文档：增加 OpenAPI/Swagger 规范文件
 - 客户端接入：增加 Continue、Zed 等客户端
@@ -17,6 +18,7 @@
 ## [1.0.0] - 2026-08-14
 
 ### 新增
+
 - 🎉 文档站首次发布
 - README：项目总览、5 分钟接入、特性介绍
 - 快速开始：quickstart / authentication / concepts

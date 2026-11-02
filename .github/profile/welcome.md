@@ -20,7 +20,7 @@ MCPCat 是一个 MCP 能力聚合网关，一个 MCP 端点接入 12+ AI 工具�
 - 🐛 [报告 Bug](https://github.com/haogegeya/mcpcat-docs/issues/new?template=bug_report.md)
 - 💡 [提功能建议](https://github.com/haogegeya/mcpcat-docs/issues/new?template=feature_request.md)
 - 📝 [改进文档](https://github.com/haogegeya/mcpcat-docs/issues/new?template=docs_improvement.md)
-- 🔧 [提交 PR](CONTRIBUTING.md)
+- 🔧 [提交 PR](../../docs/CONTRIBUTING.md)
 
 ## ⭐ 如果这个项目对你有帮助
 

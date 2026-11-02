@@ -37,7 +37,7 @@
 
 ### 计费流程
 
-```
+```text
 用户调用工具
     ↓
 1. 查询工具定价（sell_mcoin）
@@ -90,7 +90,7 @@
 
 ### 工具 vs Adapter 的关系
 
-```
+```text
 Adapter（适配器）= 一个上游 API 的封装
   ↓
 Tool（工具）= Adapter 暴露的一个具体函数
@@ -130,7 +130,7 @@ Tool（工具）= Adapter 暴露的一个具体函数
 
 ### 工具生命周期
 
-```
+```text
 1. 平台上线新 Adapter
    ↓
 2. Adapter 暴露的 Tools 自动加入工具市场
@@ -162,7 +162,7 @@ Tool（工具）= Adapter 暴露的一个具体函数
 
 ### 工具调用流程
 
-```
+```text
 AI Agent: "帮我查北京天气"
    ↓
 AI 决定调用 weather_query(cityname="北京")
@@ -196,7 +196,7 @@ AI Agent 收到结果，整理成自然语言回复
 
 ### 三层接入架构
 
-```
+```text
 ┌─────────────────────────────────────────┐
 │  Layer 1: 通用 HTTP Adapter（90%）        │
 │  填配置零代码，5 秒接入                  │
@@ -252,6 +252,7 @@ AI Agent 收到结果，整理成自然语言回复
 ```
 
 **特点**：
+
 - 5 秒接入
 - 热加载生效
 - 无需重启服务
@@ -310,7 +311,7 @@ class MyCustomAdapter(MCPAdapter):
 
 **机制**：
 
-```
+```text
 管理员后台修改配置 → 保存到 MySQL
     ↓
 Redis Pub/Sub 发布 mcpcat:adapter:reload
@@ -323,6 +324,7 @@ Redis Pub/Sub 发布 mcpcat:adapter:reload
 ```
 
 **优势**：
+
 - 改配置无需重启服务
 - 0 停机时间
 - 跨节点同步
@@ -331,7 +333,7 @@ Redis Pub/Sub 发布 mcpcat:adapter:reload
 
 ## 🔗 三者关系
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │                 MCPCat 平台                  │
 │                                              │
@@ -360,6 +362,7 @@ Redis Pub/Sub 发布 mcpcat:adapter:reload
 ```
 
 **简单记忆**：
+
 - **MCoin** = 钱
 - **Tool** = 卖的功能（用户视角）
 - **Adapter** = 进货渠道（管理员视角）

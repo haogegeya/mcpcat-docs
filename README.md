@@ -1,14 +1,14 @@
 # 📚 MCPCat 文档
 
 > **MCP 能力聚合网关官方文档**  
-> 一个 MCP 端点，几百个 AI 工具立刻能用
+> 一个 MCP 端点，让 AI Agent 直接拿到实时世界的数据
 
 [![Website](https://img.shields.io/badge/website-mcpcat.cn-FF6B35?style=flat-square)](https://mcpcat.cn)
 [![MCP](https://img.shields.io/badge/MCP-compatible-1A1A2E?style=flat-square)](https://modelcontextprotocol.io)
 [![License](https://img.shields.io/badge/license-MIT-4ECDC4?style=flat-square)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](docs/CONTRIBUTING.md)
 
-[官网](https://mcpcat.cn) · [MCP 端点](https://mcp.mcpcat.cn) · [更新日志](CHANGELOG.md) · [问题反馈](https://github.com/haogegeya/mcpcat-docs/issues)
+[官网](https://mcpcat.cn) · [MCP 端点](https://mcp.mcpcat.cn) · [更新日志](docs/CHANGELOG.md) · [问题反馈](https://github.com/haogegeya/mcpcat-docs/issues) · [平台规范](https://github.com/haogegeya/mcpcat-platform)
 
 ---
 
@@ -16,7 +16,16 @@
 
 **MCPCat** 是一个 MCP（Model Context Protocol）能力聚合网关服务。
 
-**一个 MCP 端点接入 12+ 常用 AI 工具**，覆盖天气、快递、手机归属地、IP 归属、贵金属行情、发票验真、条码、火车票、油价、运营商三要素等场景。
+**一个 MCP 端点接入常用 AI 工具**，覆盖天气、快递、手机归属地、IP 归属、贵金属行情、发票验真、条码、火车票、油价、运营商三要素等场景。
+
+具体可用工具**以实时 `tools/list` 返回为准**（本文档刻意不写死数量，写死就会过期）：
+
+```bash
+curl -s https://mcp.mcpcat.cn/v1/mcp \
+  -H "Authorization: Bearer <your-key>" \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+```
 
 **不写代码、不买 API、不搭环境**，按用量花平台币（MCoin）结算，**失败自动退款**。
 
@@ -25,9 +34,11 @@
 ## 🚀 5 分钟接入
 
 ### 1. 注册账号
+
 访问 [mcpcat.cn](https://mcpcat.cn) 注册，新用户**送 100 MCoin** 体验额度。
 
 ### 2. 创建 API Key
+
 在控制台「[API Key 管理](https://mcpcat.cn/console/keys)」创建 Key，仅创建时显示明文，请妥善保存。
 
 ### 3. 配置 MCP 客户端
@@ -56,6 +67,7 @@
 | Transport | Streamable HTTP |
 
 ### 4. 勾选工具
+
 登录控制台，在「[工具市场](https://mcpcat.cn/console/tools)」勾选需要启用的工具，立即可用。
 
 ---
@@ -65,7 +77,7 @@
 | 特性 | 说明 |
 |------|------|
 | **统一 MCP 端点** | 完整支持 MCP JSON-RPC 2.0，兼容主流 MCP 客户端 |
-| **12+ 工具** | 覆盖天气/快递/手机归属/IP/贵金属/发票验真等场景 |
+| **实时工具市场** | 覆盖天气/快递/手机归属/IP/贵金属/发票验真等场景，以 `tools/list` 为准 |
 | **平台币 MCoin** | ¥1 = 100 MCoin，充值档位有赠送 |
 | **失败自动退款** | 上游异常或返回空结果时自动识别并退还费用 |
 | **0 接入成本** | 无需自购 API、自写 MCP Server、自搭环境 |
@@ -78,11 +90,13 @@
 ## 📖 文档导航
 
 ### 🚀 快速开始
+
 - [快速开始](docs/getting-started/quickstart.md) — 5 分钟接入 MCPCat
 - [认证说明](docs/getting-started/authentication.md) — API Key 与 JWT 双凭证体系
 - [核心概念](docs/getting-started/concepts.md) — MCoin、工具、Adapter
 
 ### 🔌 客户端接入
+
 - [Claude Desktop](docs/guides/claude-desktop.md)
 - [Cursor](docs/guides/cursor.md)
 - [Cline](docs/guides/cline.md)
@@ -90,6 +104,7 @@
 - [其他客户端](docs/guides/other-clients.md)
 
 ### 🛠️ API 参考
+
 - [API 概览](docs/api/README.md)
 - [认证](docs/api/authentication.md)
 - [initialize](docs/api/initialize.md)
@@ -99,6 +114,7 @@
 - [计费规则](docs/api/billing.md)
 
 ### 🧰 工具列表
+
 - [工具市场](docs/tools/README.md) — 全部工具索引
 - [生活服务](docs/tools/lifestyle.md) — 天气、空气质量
 - [物流快递](docs/tools/express.md) — 快递查询
@@ -109,12 +125,13 @@
 - [出行查询](docs/tools/travel.md) — 火车票
 
 ### 📚 更多
+
 - [定价说明](docs/pricing.md) — MCoin 计费规则
 - [使用示例](docs/examples.md) — 实战 Case
 - [常见问题](docs/faq.md) — FAQ
 - [路线图](docs/roadmap.md) — 五层能力演进
-- [更新日志](CHANGELOG.md)
-- [贡献指南](CONTRIBUTING.md)
+- [更新日志](docs/CHANGELOG.md)
+- [贡献指南](docs/CONTRIBUTING.md)
 
 ---
 
@@ -134,9 +151,9 @@
 
 ## 🧬 能力路线图
 
-```
+```text
 数据查询类（当前）  →  动作执行类  →  SaaS 集成类  →  AI 能力类  →  私有自动化
-  12 工具，验证中       建壁垒中        规划中          规划中        长期目标
+  持续扩充中          建壁垒中        规划中          规划中        长期目标
 ```
 
 - **短期（1-2 月）**：上线 OCR、翻译、地图、股票、汇率、邮编
@@ -147,11 +164,11 @@
 
 ## 🤝 贡献
 
-欢迎提交 Issue 和 PR 改进文档！详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+欢迎提交 Issue 和 PR 改进文档！详见 [CONTRIBUTING.md](docs/CONTRIBUTING.md)。
 
 **发现文档错误** → [提交 Issue](https://github.com/haogegeya/mcpcat-docs/issues/new)  
-**工具使用问题** → [MCPCat 用户群](#)  
-**商务合作** → support@mcpcat.cn
+**工具使用问题** → **MCPCat 用户群**（内测期由官方通过邮件邀请开通）  
+**商务合作** → [support@mcpcat.cn](mailto:support@mcpcat.cn)
 
 ---
 
@@ -163,11 +180,14 @@
 
 ## 🔗 相关链接
 
-- **官网**：https://mcpcat.cn
+- **官网**：<https://mcpcat.cn>
 - **MCP 端点**：`https://mcp.mcpcat.cn/v1/mcp`
-- **状态页**：https://status.mcpcat.cn
-- **邮箱**：support@mcpcat.cn
-- **GitHub**：https://github.com/haogegeya/mcpcat-docs
+- **状态页**：<https://status.mcpcat.cn>
+- **邮箱**：[support@mcpcat.cn](mailto:support@mcpcat.cn)
+- **GitHub**：<https://github.com/haogegeya/mcpcat-docs>
+- **平台规范与使用方式**：<https://github.com/haogegeya/mcpcat-platform>
+
+> 本仓库是**分篇详细文档站**（按客户端 / API 方法 / 工具类别拆开）；平台的**产品边界、接入规范、使用方式**定义在姊妹仓库 [haogegeya/mcpcat-platform](https://github.com/haogegeya/mcpcat-platform)，那边是平台口径的单一来源。
 
 ---
 

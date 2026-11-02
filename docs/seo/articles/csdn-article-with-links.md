@@ -1,12 +1,15 @@
 # CSDN 版本（带 mcpcat.cn 外链版）
 
 ## 标题
+
 **MCP 协议实战：5 分钟给你的 AI 装上 135+ 个工具（MCPCat 详解）**
 
 ## 标签
+
 MCP、Claude、Cursor、AI 工具、API 聚合、Anthropic、Agent
 
 ## 分类
+
 后端 > 人工智能
 
 ---
@@ -30,6 +33,7 @@ MCP（Model Context Protocol）出来一年了，但很多人不知道——
 一句话：**一个 MCP 端点 = 135+ 个 AI 工具**。
 
 支持：
+
 - 天气查询（免费）
 - 快递查询
 - 手机归属地
@@ -57,7 +61,7 @@ MCP（Model Context Protocol）出来一年了，但很多人不知道——
 
 **Step 1：注册**
 
-去 https://www.mcpcat.cn 注册账号（送 100 MCoin）。
+去 <https://www.mcpcat.cn> 注册账号（送 100 MCoin）。
 
 **Step 2：创建 API Key**
 
@@ -89,6 +93,7 @@ MCP（Model Context Protocol）出来一年了，但很多人不知道——
 - 新用户注册送 100 MCoin
 
 **价格档**：
+
 - 免费工具：4 个（天气、空气质量等）
 - 2 MCoin/次：贵金属、航班、彩票
 - 4-5 MCoin/次：药企、运营商三要素
@@ -111,14 +116,15 @@ MCP（Model Context Protocol）出来一年了，但很多人不知道——
 ### 总结
 
 MCPCat 适合：
+
 - ✅ 想给 AI 装工具但不想折腾的
 - ✅ 同时需要多种数据查询的
 - ✅ 按调用付费、不想包月的
 - ✅ 想要统一管理 API Key 的
 
-官网：https://www.mcpcat.cn
-文档：https://www.mcpcat.cn/docs
-GitHub：https://github.com/haogegeya/mcpcat-docs
+官网：<https://www.mcpcat.cn>
+文档：<https://www.mcpcat.cn/docs>
+GitHub：<https://github.com/haogegeya/mcpcat-docs>
 
 ---
 

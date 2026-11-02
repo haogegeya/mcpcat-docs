@@ -4,13 +4,26 @@
 
 ## 📊 工具总览
 
-**当前已上线 13 个工具**，覆盖 7 大场景。所有工具都支持 MCP 标准协议，AI Agent 可直接调用。
+工具覆盖 7 大场景，所有工具都支持 MCP 标准协议，AI Agent 可直接调用。
+
+!!! important "不要拿任何文档里的数字当准"
+    本页不写死工具总数——**写死就会过期**。当前可用工具请以你自己的 `tools/list` 实时返回为准：
+
+    ```bash
+    curl -s https://mcp.mcpcat.cn/v1/mcp \
+      -H "Authorization: Bearer <your-key>" \
+      -H "Content-Type: application/json" \
+      -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+    ```
+
+    返回只包含**你在控制台勾选启用**的工具，不同账号看到的数量不一样。
 
 ---
 
 ## 🗂️ 按场景分类
 
 ### 🌤️ [生活服务](lifestyle.md)
+
 日常查询类工具，免费为主
 
 | 工具 | 描述 | 定价 |
@@ -19,6 +32,7 @@
 | [`air_quality_query`](lifestyle.md#air_quality_query) | 城市空气质量 | **免费** |
 
 ### 📦 [物流快递](express.md)
+
 快递物流跟踪
 
 | 工具 | 描述 | 定价 |
@@ -27,6 +41,7 @@
 | [`express_query_v2`](express.md#express_query_v2) | 快递查询增强版 | 3 MCoin/次 |
 
 ### 📱 [通信查询](communication.md)
+
 手机号相关
 
 | 工具 | 描述 | 定价 |
@@ -36,6 +51,7 @@
 | [`number_portability`](communication.md#number_portability) | 携号转网 | 3 MCoin/次 |
 
 ### 🌐 [网络工具](network.md)
+
 IP 地址相关
 
 | 工具 | 描述 | 定价 |
@@ -43,6 +59,7 @@ IP 地址相关
 | [`ip_location`](network.md#ip_location) | IP 归属地 | 3 MCoin/次 |
 
 ### 💰 [金融行情](finance.md)
+
 实时行情
 
 | 工具 | 描述 | 定价 |
@@ -51,6 +68,7 @@ IP 地址相关
 | [`oil_price`](finance.md#oil_price) | 全国油价 | 3 MCoin/次 |
 
 ### ✅ [验证核验](verification.md)
+
 数据真实性核验
 
 | 工具 | 描述 | 定价 |
@@ -59,6 +77,7 @@ IP 地址相关
 | [`barcode_query`](verification.md#barcode_query) | 条码查询 | 5 MCoin/次 |
 
 ### 🚄 [出行查询](travel.md)
+
 交通票务
 
 | 工具 | 描述 | 定价 |
@@ -70,14 +89,18 @@ IP 地址相关
 ## 💡 快速选择
 
 ### 我想快速体验
+
 推荐勾选：
+
 - ✅ `weather_query`（免费）
 - ✅ `phone_attribution`（3 MCoin，查询自己的手机号）
 
 **成本**：0 - 3 MCoin
 
 ### 我要做 Agent
+
 推荐勾选：
+
 - ✅ `weather_query`（免费，日常高频）
 - ✅ `express_query`（3 MCoin，物流查询）
 - ✅ `phone_attribution`（3 MCoin，归属地）
@@ -86,7 +109,9 @@ IP 地址相关
 **成本**：约 6 MCoin / 20 次调用
 
 ### 我要做企业服务
+
 推荐勾选：
+
 - ✅ `invoice_verify`（10 MCoin）
 - ✅ `carrier_verify`（5 MCoin）
 - ✅ `express_query_v2`（3 MCoin）
@@ -113,7 +138,7 @@ IP 地址相关
 工具持续扩充中，关注：
 
 - 🔔 [GitHub Releases](https://github.com/haogegeya/mcpcat-docs/releases) — 文档更新通知
-- 📝 [更新日志](../../CHANGELOG.md) — 工具变更记录
+- 📝 [更新日志](../CHANGELOG.md) — 工具变更记录
 - 📮 邮件订阅 — 重要工具上线通知
 
 ### 计划中的工具
@@ -140,4 +165,4 @@ IP 地址相关
 
 ---
 
-> 🐱 13 个工具只是开始，万物皆可 MCP
+> 🐱 工具持续扩充中，万物皆可 MCP

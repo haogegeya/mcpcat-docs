@@ -17,11 +17,14 @@
 
 ### Q1: MCPCat 是什么？
 
-**A**: MCPCat 是一个 **MCP 能力聚合网关**。一个 MCP 端点接入 12+ AI 工具（天气、快递、手机归属、IP、贵金属、发票验真等），无需自购 API、自写代码、自搭环境，按用量花平台币 MCoin 结算。
+**A**: MCPCat 是一个 **MCP 能力聚合网关**。一个 MCP 端点接入天气、快递、手机归属、IP、贵金属、发票验真等场景的 AI 工具，无需自购 API、自写代码、自搭环境，按用量花平台币 MCoin 结算。
+
+具体可用工具以 `tools/list` 实时返回为准（数量随平台扩充变化，见 [工具市场](tools/README.md)）。
 
 ### Q2: 我能用 MCPCat 做什么？
 
 **A**: 主要场景：
+
 - 给 Claude/Cursor/Cline 等 AI 客户端装工具
 - 个人/小团队的 AI 增强
 - 快速做产品原型
@@ -30,6 +33,7 @@
 ### Q3: 支持哪些客户端？
 
 **A**: 任何支持 MCP Streamable HTTP 协议的客户端：
+
 - Claude Desktop
 - Cursor
 - Cline（VS Code）
@@ -45,6 +49,7 @@
 ### Q4: 数据安全吗？
 
 **A**: 安全
+
 - ✅ 全链路 HTTPS
 - ✅ API Key 哈希存储（明文不落地）
 - ✅ IP 白名单可选
@@ -53,10 +58,11 @@
 
 ### Q5: 有 SLA 保证吗？
 
-**A**: 
+**A**:
+
 - 内测期：尽力服务
 - v1.0 上线后：99%+ 可用性承诺
-- 详细 SLA 见 [服务条款](#)（v1.0 上线后提供）
+- 详细 SLA 见 **服务条款**（v1.0 上线后提供）
 
 ---
 
@@ -65,13 +71,15 @@
 ### Q6: API Key 格式是什么？
 
 **A**: `mcpc_sk_<32位字符>`，例如：
-```
+
+```text
 mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 ```
 
 ### Q7: 忘记保存 API Key 怎么办？
 
 **A**: 抱歉，API Key 的明文只在创建时显示一次，**MCPCat 也无法恢复**（只存哈希）。解决：
+
 1. 登录控制台删除旧 Key
 2. 创建新 Key
 3. 更新所有使用旧 Key 的客户端
@@ -79,6 +87,7 @@ mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 ### Q8: 一个 API Key 能在多个客户端用吗？
 
 **A**: 技术上可以，但**不推荐**：
+
 - ❌ 无法独立撤销某个客户端
 - ❌ 无法独立限流
 - ❌ 无法独立统计
@@ -91,15 +100,17 @@ mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 ### Q10: API Key 泄露了怎么办？
 
 **A**: 立即：
+
 1. 在控制台删除该 Key
 2. 创建新 Key
 3. 更新所有使用该 Key 的客户端配置
 4. 检查账单确认没有异常调用
-5. 如有资损，联系 support@mcpcat.cn
+5. 如有资损，联系 [support@mcpcat.cn](mailto:support@mcpcat.cn)
 
 ### Q11: 速率限制是多少？
 
 **A**: 四层限流（取最小生效）：
+
 | 层级 | 默认限制 |
 |------|---------|
 | IP 级 | 300 次/分钟 |
@@ -112,6 +123,7 @@ mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 ### Q12: IP 白名单怎么配？
 
 **A**: 创建 API Key 时填写 `allowed_ips`：
+
 ```json
 {
   "allowed_ips": ["1.2.3.4", "5.6.7.0/24"]
@@ -130,7 +142,8 @@ mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 
 ### Q14: tools/list 为空怎么办？
 
-**A**: 
+**A**:
+
 1. 确认在控制台勾选了至少一个工具
 2. 确认 API Key 有效
 3. 重新调用 `tools/list`
@@ -138,7 +151,8 @@ mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 
 ### Q15: 工具调用失败怎么办？
 
-**A**: 
+**A**:
+
 1. 查看 [错误码文档](api/error-codes.md)
 2. 常见原因：
    - `-32002` 工具未启用 → 去控制台勾选
@@ -149,13 +163,15 @@ mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 ### Q16: 天气工具查不到我的城市？
 
 **A**: 试试：
+
 - 用更标准的城市名（如"北京市"而不是"北京bj"）
 - 切换城市别名（如"海淀区"或"北京"）
 - 查 5A 景区可能不行，要查市级
 
 ### Q17: 快递查询不到单号？
 
-**A**: 
+**A**:
+
 1. 确认单号拼写正确
 2. 加 `com` 参数指定快递公司
 3. 部分新单号需等快递公司入库后才能查（1-2 小时）
@@ -183,8 +199,9 @@ mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 
 ### Q22: 充值方式有哪些？
 
-**A**: 
-- 内测期：手动充值（联系 support@mcpcat.cn）
+**A**:
+
+- 内测期：手动充值（联系 [support@mcpcat.cn](mailto:support@mcpcat.cn)）
 - v1.0 上线后：微信支付、支付宝
 
 ### Q23: 充值档位有优惠吗？
@@ -204,13 +221,14 @@ mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 
 ### Q25: 余额能退吗？
 
-**A**: 支持。联系 support@mcpcat.cn 申请，未消费的 MCoin 可退。
+**A**: 支持。联系 [support@mcpcat.cn](mailto:support@mcpcat.cn) 申请，未消费的 MCoin 可退。
 
 ### Q26: 为什么我调用失败了还扣费？
 
 **A**: 99% 的失败会**自动退款**。如果你确认被错误扣费：
+
 1. 提供 call_id（账单里有）
-2. 联系 support@mcpcat.cn
+2. 联系 [support@mcpcat.cn](mailto:support@mcpcat.cn)
 3. 我们会人工核查并退款
 
 ### Q27: 免费工具有次数限制吗？
@@ -220,6 +238,7 @@ mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 ### Q28: 怎么开发票？
 
 **A**: 充值后可申请发票：
+
 - 普通发票：电子化
 - 增值税专票：需提供开票信息
 
@@ -235,7 +254,8 @@ mcpc_sk_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
 
 ### Q30: 能在本地部署吗？
 
-**A**: 
+**A**:
+
 - 内测期：不开放私有部署
 - 商业版（v2.0+）：将提供私有部署方案
 - 当前建议：使用共享云服务
@@ -250,7 +270,8 @@ npx -y @modelcontextprotocol/inspector@latest
 
 ### Q32: SDK 有哪些？
 
-**A**: 
+**A**:
+
 - Python: 使用 httpx 直接调用（见 [API 参考](api/README.md)）
 - JavaScript: `@modelcontextprotocol/sdk`
 - 其他语言：任何支持 HTTP 的客户端都可以
@@ -258,6 +279,7 @@ npx -y @modelcontextprotocol/inspector@latest
 ### Q33: 有没有批量处理功能？
 
 **A**: 当前**不**提供官方批量 API。建议：
+
 - 自己写脚本循环调用
 - 启用足够多的免费/低价工具
 - 联系商务洽谈折扣
@@ -265,12 +287,14 @@ npx -y @modelcontextprotocol/inspector@latest
 ### Q34: 如何保证调用幂等性？
 
 **A**: 当前版本**不**保证幂等性（可能因重试重复扣费）。建议：
+
 - 客户端做请求去重（基于参数 hash）
 - 失败时不盲目重试
 
 ### Q35: 上游 API 出问题会影响我吗？
 
-**A**: 
+**A**:
+
 - 上游 5xx → 自动退款
 - 上游限流 → 自动重试 1 次，仍失败则退款
 - 上游数据错误 → 退款
@@ -279,7 +303,8 @@ npx -y @modelcontextprotocol/inspector@latest
 
 ### Q36: 网络延迟怎么样？
 
-**A**: 
+**A**:
+
 - 国内客户端：50-200ms
 - 海外客户端：200-500ms
 - 加上上游 API 调用：通常 1-3 秒
@@ -291,11 +316,12 @@ npx -y @modelcontextprotocol/inspector@latest
 ### Q37: 能定制工具吗？
 
 **A**: 可以！适用于：
+
 - 需要对接企业内部系统
 - 需要特殊业务逻辑
 - 需要私有 API
 
-请联系商务：business@mcpcat.cn
+请联系商务：[business@mcpcat.cn](mailto:business@mcpcat.cn)
 
 ### Q38: 能私有部署吗？
 
@@ -303,11 +329,12 @@ npx -y @modelcontextprotocol/inspector@latest
 
 ### Q39: 企业版定价？
 
-**A**: 联系商务洽谈，根据用量和定制需求报价。business@mcpcat.cn
+**A**: 联系商务洽谈，根据用量和定制需求报价。[business@mcpcat.cn](mailto:business@mcpcat.cn)
 
 ### Q40: 怎样成为渠道代理？
 
-**A**: 欢迎渠道合作。联系 business@mcpcat.cn 提供：
+**A**: 欢迎渠道合作。联系 [business@mcpcat.cn](mailto:business@mcpcat.cn) 提供：
+
 - 公司信息
 - 客户资源
 - 合作模式
@@ -324,13 +351,13 @@ npx -y @modelcontextprotocol/inspector@latest
 
 ### 需要人工帮助？
 
-- 💬 加入 [MCPCat 用户群](#)
-- 📧 邮件：support@mcpcat.cn
+- 💬 加入 **MCPCat 用户群**（内测期由官方通过邮件邀请开通）
+- 📧 邮件：[support@mcpcat.cn](mailto:support@mcpcat.cn)
 - 🐛 [GitHub Issues](https://github.com/haogegeya/mcpcat-docs/issues)
 
 ### 商务合作？
 
-- 📧 邮件：business@mcpcat.cn
+- 📧 邮件：[business@mcpcat.cn](mailto:business@mcpcat.cn)
 
 ---
 

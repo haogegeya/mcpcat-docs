@@ -33,7 +33,8 @@
 5. ⚠️ **立即复制明文 Key**（只显示一次！）
 
 Key 格式：
-```
+
+```text
 mcpc_sk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
@@ -148,7 +149,7 @@ AI 会自动调用 MCPCat 的天气工具，几秒后返回结果：
 
 ---
 
-## ✅ 验证接入
+## 验证接入
 
 ### 方法 1：用 curl 测试
 
@@ -173,6 +174,7 @@ curl -X POST https://mcp.mcpcat.cn/v1/mcp \
 ```
 
 成功响应：
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -206,20 +208,23 @@ npx -y @modelcontextprotocol/inspector@latest
 ## 🆘 常见问题
 
 ### ❌ 客户端连不上？
+
 1. 检查 API Key 是否正确（`mcpc_sk_` 前缀）
 2. 检查 URL 是否正确：`https://mcp.mcpcat.cn/v1/mcp`
 3. 检查网络：能否访问 `mcp.mcpcat.cn`
 4. 查看客户端日志
 
 ### ❌ tools/list 为空？
+
 1. 登录控制台「工具市场」
 2. 确认已勾选至少一个工具
 3. 确认工具保存成功
 
 ### ❌ tools/call 报错？
+
 1. 检查参数是否符合工具定义
 2. 查看错误码说明：[错误码](../api/error-codes.md)
-3. 联系 support@mcpcat.cn
+3. 联系 [support@mcpcat.cn](mailto:support@mcpcat.cn)
 
 ---
 

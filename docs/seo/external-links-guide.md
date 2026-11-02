@@ -4,7 +4,7 @@
 
 ## 已有的 haogegeya 仓库（可加外链）
 
-去 https://github.com/haogegeya 查仓库列表，给每个活跃仓库的 README 加：
+去 <https://github.com/haogegeya> 查仓库列表，给每个活跃仓库的 README 加：
 
 ### README 模板（放在底部「相关项目」或「更多项目」区）
 
@@ -28,13 +28,17 @@
 ## 操作步骤
 
 ### 1. 列你现有的活跃仓库
+
 ```bash
 gh repo list haogegeya --limit 30 --source
 ```
-（如果你没装 gh，用 https://github.com/haogegeya 浏览器看）
+
+（如果你没装 gh，用 <https://github.com/haogegeya> 浏览器看）
 
 ### 2. 选 5-10 个流量最大的仓库
+
 优先选：
+
 - ⭐ star 数最多的
 - 🍴 fork 数最多的
 - 📈 最近一年还有更新的
@@ -44,7 +48,7 @@ gh repo list haogegeya --limit 30 --source
 cd 到项目目录，编辑 README.md，底部加「相关项目」段：
 
 ```bash
-cd ~/Desktop/projects/<某个项目>
+cd ~/.openclaw/workspace/projects/<某个项目>
 nano README.md
 # 底部粘贴上面的模板
 git add README.md
@@ -57,6 +61,7 @@ git push
 ## 为什么这能帮百度收录？
 
 百度计算外链权重时：
+
 - **同账号外链**：⭐⭐（权重低，但有用，证明你站存在）
 - **同 IP 外链**：⭐⭐⭐（权重中）
 - **第三方站点外链**：⭐⭐⭐⭐⭐（权重高）
@@ -143,6 +148,7 @@ done
 ## 关键提醒
 
 **别做这些（百度会惩罚）**：
+
 - ❌ 买外链（黑帽）
 - ❌ 群发垃圾评论带链接
 - ❌ 站群互链
@@ -150,6 +156,7 @@ done
 - ❌ 跟无关站点交换友链
 
 **应该做的**：
+
 - ✅ 内容里自然带链接
 - ✅ 友链站点主题相关
 - ✅ 持续发高质量内容

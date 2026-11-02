@@ -18,7 +18,7 @@
 
 ### 方法名
 
-```
+```text
 initialize
 ```
 

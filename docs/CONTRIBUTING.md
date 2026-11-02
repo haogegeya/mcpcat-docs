@@ -26,7 +26,7 @@
 **有功能疑问？**
 
 - 工具使用问题：加入 MCPCat 用户群
-- 商务合作：support@mcpcat.cn
+- 商务合作：[support@mcpcat.cn](mailto:support@mcpcat.cn)
 
 ## ✏️ 提交修改
 
@@ -49,6 +49,7 @@
 - `chore: xxx` — 杂项
 
 示例：
+
 ```bash
 git commit -m "docs: 补充 Claude Desktop 配置截图"
 git commit -m "fix: 修正 weather_query 工具参数名"
@@ -79,7 +80,7 @@ pip install mkdocs mkdocs-material
 mkdocs serve
 ```
 
-访问 http://localhost:8000
+访问 <http://localhost:8000>
 
 ### 直接查看
 
@@ -87,7 +88,7 @@ mkdocs serve
 
 ## 📦 目录结构
 
-```
+```text
 mcpcat-docs/
 ├── README.md              # 项目主入口
 ├── LICENSE
@@ -106,9 +107,9 @@ mcpcat-docs/
 
 ## 📞 联系我们
 
-- **GitHub Issues**：https://github.com/haogegeya/mcpcat-docs/issues
-- **邮箱**：support@mcpcat.cn
-- **官网**：https://mcpcat.cn
+- **GitHub Issues**：<https://github.com/haogegeya/mcpcat-docs/issues>
+- **邮箱**：[support@mcpcat.cn](mailto:support@mcpcat.cn)
+- **官网**：<https://mcpcat.cn>
 
 ---
 

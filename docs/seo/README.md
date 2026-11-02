@@ -1,6 +1,6 @@
 # 🎯 MCPCat 百度收录完整方案
 
-> 14 天内让 www.mcpcat.cn 被百度收录并获得初始排名。
+> 14 天内让 <www.mcpcat.cn> 被百度收录并获得初始排名。
 
 ## 📁 目录
 
@@ -10,16 +10,17 @@
 
 ---
 
-## 🚀 快速开始
+## 快速开始
 
 ### 5 分钟搞定的 4 件事
 
-1. **注册百度站长**：https://ziyuan.baidu.com
+1. **注册百度站长**：<https://ziyuan.baidu.com>
 2. **验证站点**：HTML 标签（贴个 meta 标签）
 3. **提交 sitemap**：`https://www.mcpcat.cn/sitemap.xml`
 4. **跑第一次推送**：
+
    ```bash
-   cd /home/two/Desktop/projects/mcpcat-docs
+   cd /home/two/.openclaw/workspace/projects/mcpcat-docs
    cp scripts/.env.baidu.example scripts/.env.baidu
    # 编辑 .env.baidu 填入从百度站长后台拿到的 token
    nano scripts/.env.baidu
@@ -28,9 +29,10 @@
 
 ---
 
-## 📅 完整 14 天计划
+## 完整 14 天计划
 
 ### Day 1（今天）
+
 - [x] 扫死链（4 个 404：`/blog` `/help` `/about` `/privacy`）
 - [ ] 注册百度站长平台
 - [ ] 验证站点（HTML 标签或文件）
@@ -39,17 +41,20 @@
 - [ ] 建 `/privacy` 页面（合规）
 
 ### Day 2-3
+
 - [ ] 每天跑一次推送
 - [ ] 发布 5 篇软文（知乎/掘金/V2EX/即刻/CSDN），文末带 mcpcat.cn 链接
 - [ ] 给 5-10 个 GitHub 仓库 README 加友链
 
 ### Day 4-7
+
 - [ ] 每天跑一次推送
 - [ ] 再发 3-5 篇带外链的软文
 - [ ] 看百度站长后台：抓取频次、索引量、外链数
 - [ ] 注册 Bing 站长、Google Search Console（顺手）
 
 ### Day 8-14
+
 - [ ] 持续每天推送
 - [ ] 在知乎/掘金/百度知道回答「MCP 工具」相关问题，每条带 mcpcat.cn
 - [ ] 找 3-5 个 AI 站点做友链交换
@@ -69,7 +74,7 @@
 
 ---
 
-## 📁 关键文件
+## 关键文件
 
 ### 本目录
 
@@ -104,18 +109,23 @@
 ## 🆘 常见问题
 
 ### Q: 多久能被收录？
+
 A: 备案 + 主动推送 + 外链 = 3-7 天。无备案纯靠外链 = 1-3 个月。
 
 ### Q: 为什么只提交了 5 个 URL？
+
 A: console/* 需要登录才能访问，推给百度也爬不到。营销页 + 法律页 + docs 共 5 个，能被爬的就是这 5 个。
 
 ### Q: console 页怎么收录？
+
 A: 百度有「登录态爬虫」，但只对大站开放。小站不指望。把 console 页 Disallow 掉（robots.txt 已设）。
 
 ### Q: sitemap 多久更新一次？
+
 A: 你站点每次有内容更新就重新生成并提交。Next.js 用 `next-sitemap` 插件自动生成。
 
 ### Q: 推送配额用完了怎么办？
+
 A: 每天 2000-5000 条配额（看你站点的百度权重），用完等第二天。
 
 ---
@@ -129,13 +139,13 @@ A: 每天 2000-5000 条配额（看你站点的百度权重），用完等第二
 crontab -e
 
 # 加这一行（每天早上 9 点推送）
-0 9 * * * cd /home/two/Desktop/projects/mcpcat-docs && bash scripts/baidu_push.sh >> scripts/push.log 2>&1
+0 9 * * * cd /home/two/.openclaw/workspace/projects/mcpcat-docs && bash scripts/baidu_push.sh >> scripts/push.log 2>&1
 ```
 
 ### 配 sitemap 自动生成（Next.js）
 
 ```bash
-cd /home/two/Desktop/projects/mcpcat
+cd /home/two/.openclaw/workspace/projects/mcpcat
 npm install -D next-sitemap
 
 # next-sitemap.config.js
@@ -162,21 +172,25 @@ EOF
 ## 🎁 额外加分手册
 
 ### 微信公众号（百度特别偏爱）
+
 1. 注册「MCPCat」公众号
 2. 每周发 1 篇技术文章，文末带阅读原文链接到 mcpcat.cn
 3. 微信里的外链百度爬得到（虽然慢）
 
 ### 百度知道 / 百度经验
+
 1. 搜「MCP 工具」「MCP 协议」「MCPCat」
 2. 自问自答，回答里带 mcpcat.cn 链接
 3. ⚠️ 不要太广告化，答的专业点
 
 ### 短视频平台
+
 1. B站/抖音发 1-2 分钟教程
 2. 视频简介带 mcpcat.cn
 3. 百度短视频搜索能搜到
 
 ### 小程序（加分项）
+
 1. 做个「MCPCat 工具市场」小程序
 2. 百度小程序能被快速收录
 

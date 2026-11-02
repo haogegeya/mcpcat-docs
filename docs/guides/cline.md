@@ -90,6 +90,7 @@ nano ~/Library/Application\ Support/Code/User/globalStorage/saoudrizwan.claude-d
 > "我有一个 Python 项目在 `~/projects/myapp`，需要查询天气 API 来展示城市天气。帮我用 MCPCat 实现"
 
 Cline 会自动：
+
 1. 浏览项目结构
 2. 调用 MCPCat 的 `weather_query` 工具获取示例数据
 3. 编写集成代码
@@ -100,6 +101,7 @@ Cline 会自动：
 > "我需要做一个工具：用户输入手机号，返回归属地。帮我创建一个完整的项目结构，包括前端表单、后端 API、错误处理，用 MCPCat 实现归属地查询"
 
 Cline 会分步骤完成：
+
 - 创建项目目录
 - 编写前端 HTML/JS
 - 编写后端 Node.js/Python
@@ -112,6 +114,7 @@ Cline 会分步骤完成：
 > "用 MCPCat 查一下 13800138000 的归属地，然后查这个城市的天气，最后用 Python 写一个脚本把两个信息整合输出"
 
 Cline 会：
+
 1. 调用 `phone_attribution(phone="13800138000")` → 拿到归属地
 2. 调用 `weather_query(cityname=<城市>)` → 拿到天气
 3. 编写整合脚本
@@ -173,6 +176,7 @@ Cline 会：
 排查步骤：
 
 1. **检查网络**：
+
    ```bash
    curl -I https://mcp.mcpcat.cn
    ```
@@ -216,6 +220,7 @@ Cline 会：
 > "我的项目用了 MCPCat 查天气，但有时候返回格式不稳定。帮我加上错误处理和重试机制"
 
 Cline 会：
+
 1. 阅读你的项目代码
 2. 调用 MCPCat 测试不同错误情况
 3. 编写健壮的错误处理代码
@@ -225,6 +230,7 @@ Cline 会：
 > "我需要批量处理 100 个快递单号，每个都查物流并整理成 Excel。帮我用 MCPCat 写个 Python 脚本"
 
 Cline 会：
+
 1. 调用 `express_query` 工具测试查询
 2. 编写批量处理脚本
 3. 加上进度显示和错误重试

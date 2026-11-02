@@ -1,4 +1,9 @@
 # 文档站部署工作流
+#
+# 依赖清单必须与 mkdocs.yml 的 plugins / markdown_extensions 对齐：
+# 2026-08-14 那次部署失败就是因为 mkdocs.yml 声明了 minify 插件，
+# 而这里只装了 mkdocs + mkdocs-material，build 直接 abort。
+# 改 mkdocs.yml 时同步改这里，并在推送前本地跑一次 `mkdocs build --strict`。
 
 name: Deploy Docs
 
@@ -20,24 +25,28 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
+          cache: 'pip'
 
-      - name: Install mkdocs
-        run: pip install mkdocs mkdocs-material
+      # 与 CI 共用同一份清单，避免两边依赖漂移
+      - name: Install mkdocs + plugins
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Build site
-        run: mkdocs build
+        run: mkdocs build --strict
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
@@ -50,4 +59,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

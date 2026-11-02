@@ -284,6 +284,7 @@ npx -y @modelcontextprotocol/inspector@latest
 ```
 
 默认端口：
+
 - Client UI: `http://localhost:6274`
 - Server: `http://localhost:6277`
 
@@ -327,7 +328,7 @@ npx -y @modelcontextprotocol/inspector@latest
 
 ### 1. 配置不生效
 
-- [ ] JSON 格式正确（用 https://jsonlint.com 校验）
+- [ ] JSON 格式正确（用 <https://jsonlint.com> 校验）
 - [ ] API Key 完整且正确（`mcpc_sk_` 前缀）
 - [ ] URL 正确：`https://mcp.mcpcat.cn/v1/mcp`（带 `/v1/mcp`）
 - [ ] 已重启客户端
@@ -355,8 +356,8 @@ curl -X POST https://mcp.mcpcat.cn/v1/mcp \
 ### 4. 获取更多帮助
 
 - 📖 [API 错误码](../api/error-codes.md)
-- 💬 [MCPCat 用户群](#)
-- 📧 邮件：support@mcpcat.cn
+- 💬 **MCPCat 用户群**（内测期由官方通过邮件邀请开通）
+- 📧 邮件：[support@mcpcat.cn](mailto:support@mcpcat.cn)
 - 🐛 [GitHub Issues](https://github.com/haogegeya/mcpcat-docs/issues)
 
 ---

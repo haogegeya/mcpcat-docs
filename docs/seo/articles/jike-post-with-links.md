@@ -28,7 +28,9 @@ mcpcat.cn
 
 ---
 
+```text
 #MCP #AI工具 #Claude #独立开发 #Agent #MCPCat
+```
 
 ---
 

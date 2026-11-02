@@ -1,15 +1,21 @@
 # 知乎专栏版本
 
 ## 标题
+
 **全网最全 MCP 工具盘点，10 个让 Agent 脱胎换骨的接口**
 
 ## 副标题/摘要
+
 MCP 出来一年了，但大部分 Agent 还是"啥也干不了"。今天盘 10 个真正好用的 MCP，按场景分类，最后一个我自己做的。
 
 ## 标签
+
+```text
 #MCP #MCP协议 #AI Agent #Claude #开发工具 #效率工具 #LLM #Anthropic #Cursor
+```
 
 ## 专栏
+
 建议投稿到：AI 工具、效率工具、程序员
 
 ---
@@ -63,7 +69,7 @@ MCP 出来一年了，但大部分 Agent 还是"啥也干不了"。今天盘 10 
 }
 ```
 
-官网：https://mcpcat.cn
+官网：<https://mcpcat.cn>
 MCP 端点：mcp.mcpcat.cn/v1/mcp
 
 > 一句话总结：如果你只想装一个 MCP，就装 MCPCat。其他 9 个都是"特定场景专精"，它是"全能选手 + 持续进化"。
@@ -145,7 +151,7 @@ MCPCat 是唯一一个"工具市场"型 MCP —— 它把"工具接入"这个最
 
 通过本文章链接注册 MCPCat，**额外赠送 50 MCoin**（活动期内）。
 
-传送门：https://mcpcat.cn
+传送门：<https://mcpcat.cn>
 MCP 端点：mcp.mcpcat.cn/v1/mcp
 
 ---

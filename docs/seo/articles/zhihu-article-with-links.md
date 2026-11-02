@@ -3,15 +3,21 @@
 > 这一版专门为 SEO 设计：文末有外链引导、文中 2 处自然植入、评论区置顶引导话术。
 
 ## 标题
+
 **全网最全 MCP 工具盘点，10 个让 Agent 脱胎换骨的接口**
 
 ## 副标题/摘要
+
 MCP 出来一年了，但大部分 Agent 还是"啥也干不了"。今天盘 10 个真正好用的 MCP，按场景分类，最后一个我自己做的。
 
 ## 标签
+
+```text
 #MCP #MCP协议 #AI Agent #Claude #开发工具 #效率工具 #LLM #Anthropic #Cursor #MCPCat
+```
 
 ## 专栏
+
 建议投稿到：AI 工具、效率工具、程序员
 
 ---
@@ -34,7 +40,7 @@ MCP 出来一年了，但大部分 Agent 还是"啥也干不了"。今天盘 10 
 
 **推荐指数**：⭐⭐⭐⭐⭐
 **适合人群**：所有 Claude/Cursor/Cline/Windsurf/Trae 用户
-**官网**：https://www.mcpcat.cn
+**官网**：<https://www.mcpcat.cn>
 **价格**：新用户注册送 100 MCoin
 
 **为什么排第一？**
@@ -137,7 +143,7 @@ MCPCat 是唯一一个"工具市场"型 MCP —— 它把"工具接入"这个最
 
 通过本文章链接注册 MCPCat，**额外赠送 50 MCoin**（活动期内）。
 
-官网：https://www.mcpcat.cn
+官网：<https://www.mcpcat.cn>
 MCP 端点：mcp.mcpcat.cn/v1/mcp
 
 ---
@@ -151,7 +157,7 @@ MCP 端点：mcp.mcpcat.cn/v1/mcp
 > 很多人问「MCPCat 跟直接装 N 个 MCP 有什么区别」？
 > 核心区别：**MCPCat 帮你**买 API 额度、**帮你**接 Adapter、**帮你**做计费、**帮你**做错误重试。你只管在 Claude/Cursor 里勾选要用的工具就行。
 >
-> 试用入口：https://www.mcpcat.cn （注册送 100 MCoin，够玩一周）
+> 试用入口：<https://www.mcpcat.cn> （注册送 100 MCoin，够玩一周）
 
 ## ❓ FAQ 准备
 
@@ -181,6 +187,6 @@ MCP 端点：mcp.mcpcat.cn/v1/mcp
 
 ## 🔗 内部链接位置（文末）
 
-- 官网：https://www.mcpcat.cn
-- 文档：https://www.mcpcat.cn/docs
-- 注册：https://www.mcpcat.cn/register
+- 官网：<https://www.mcpcat.cn>
+- 文档：<https://www.mcpcat.cn/docs>
+- 注册：<https://www.mcpcat.cn/register>

@@ -30,13 +30,15 @@
 ```
 
 **原因**：
+
 - 请求体不是合法 JSON
 - Content-Type 错误
 - 请求体过大
 
 **处理**：
+
 - 检查 JSON 格式
-- 用 https://jsonlint.com 校验
+- 用 <https://jsonlint.com> 校验
 
 ---
 
@@ -56,11 +58,13 @@
 ```
 
 **原因**：
+
 - 缺少 `jsonrpc` 字段
 - `jsonrpc` 值不是 `"2.0"`
 - 请求结构不符合 JSON-RPC 2.0 规范
 
 **处理**：
+
 - 确认请求包含 `jsonrpc: "2.0"`、`id`、`method`
 
 ---
@@ -81,10 +85,12 @@
 ```
 
 **原因**：
+
 - 方法名拼写错误
 - 调用了未实现的方法
 
 **处理**：
+
 - 参考 [API 概览](README.md) 确认方法名
 - 当前仅支持 `initialize` / `tools/list` / `tools/call`
 
@@ -115,6 +121,7 @@
 | `参数 X 超出范围` | minimum/maximum 校验失败 |
 
 **处理**：
+
 - 参考工具的 `inputSchema`
 - 用 [MCP Inspector](../guides/other-clients.md#mcp-inspector调试工具) 调试
 
@@ -136,13 +143,15 @@
 ```
 
 **原因**：
+
 - 数据库异常
 - Redis 异常
 - 代码 bug
 
 **处理**：
+
 - 稍后重试
-- 联系 support@mcpcat.cn 并附上请求 ID
+- 联系 [support@mcpcat.cn](mailto:support@mcpcat.cn) 并附上请求 ID
 
 ---
 
@@ -175,9 +184,10 @@
 | Key 被冻结 | `API Key 已被冻结，请联系 support@mcpcat.cn` |
 
 **处理**：
+
 - 检查 `Authorization: Bearer mcpc_sk_xxx` 是否正确
 - 登录 [控制台](https://mcpcat.cn/console/keys) 确认 Key 状态
-- 联系 support@mcpcat.cn 解冻
+- 联系 [support@mcpcat.cn](mailto:support@mcpcat.cn) 解冻
 
 ---
 
@@ -197,11 +207,13 @@
 ```
 
 **原因**：
+
 - 工具名拼写错误
 - 工具未在控制台勾选
 - 工具已下线
 
 **处理**：
+
 - 登录 [工具市场](https://mcpcat.cn/console/tools) 勾选对应工具
 - 调用 `tools/list` 查看可用工具
 
@@ -223,12 +235,14 @@
 ```
 
 **响应 Header 包含**：
-```
+
+```http
 X-MCoin-Balance: 5
 X-MCoin-Required: 10
 ```
 
 **处理**：
+
 - 前往 [充值页面](https://mcpcat.cn/console/billing)
 - 或提示用户："余额不足，请充值"
 - 注册新用户有 100 MCoin 赠送
@@ -256,7 +270,8 @@ X-MCoin-Required: 10
 ```
 
 **响应 Header**：
-```
+
+```http
 Retry-After: 30
 X-RateLimit-Limit: 60
 X-RateLimit-Remaining: 0
@@ -273,6 +288,7 @@ X-RateLimit-Reset: 1692012345
 | Tool 级 | 60 次/分钟 |
 
 **处理**：
+
 - 等待 `Retry-After` 秒后重试
 - 升级 Key 速率限制
 - 使用多个 Key 分散流量
@@ -299,12 +315,14 @@ X-RateLimit-Reset: 1692012345
 ```
 
 **原因**：
+
 - 快递单号不存在
 - 城市名无效
 - 身份证号格式错误
 - 上游 API 临时故障
 
 **处理**：
+
 - 检查参数是否正确
 - 稍后重试
 - 更换其他工具
@@ -329,12 +347,14 @@ X-RateLimit-Reset: 1692012345
 ```
 
 **原因**：
+
 - 上游 API 响应过慢
 - 网络问题
 
 **处理**：
+
 - 稍后重试
-- 联系 support@mcpcat.cn（如频繁出现）
+- 联系 [support@mcpcat.cn](mailto:support@mcpcat.cn)（如频繁出现）
 
 > ⚠️ 此错误**会自动退款**
 
@@ -358,22 +378,24 @@ X-RateLimit-Reset: 1692012345
 
 路径错误：
 
-```
+```http
 POST /v1/mcp/foo  → 404 Not Found
 ```
 
 **处理**：
+
 - 确认 URL 为 `https://mcp.mcpcat.cn/v1/mcp`
 
 ### 405 Method Not Allowed
 
 HTTP 方法错误：
 
-```
+```http
 GET /v1/mcp  → 405 Method Not Allowed
 ```
 
 **处理**：
+
 - 使用 POST 方法
 - MCP 协议所有方法都通过 POST 发送
 
@@ -499,8 +521,8 @@ async def call_tool_safely(tool_name, arguments):
 ## 🆘 获取更多帮助
 
 - 📖 [API 概览](README.md)
-- 💬 [MCPCat 用户群](#)
-- 📧 邮件：support@mcpcat.cn
+- 💬 **MCPCat 用户群**（内测期由官方通过邮件邀请开通）
+- 📧 邮件：[support@mcpcat.cn](mailto:support@mcpcat.cn)
 - 🐛 [GitHub Issues](https://github.com/haogegeya/mcpcat-docs/issues)
 
 ---
